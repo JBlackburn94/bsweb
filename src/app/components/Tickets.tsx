@@ -7,8 +7,8 @@ import Script from "next/script";
 export default function Tickets() {
   const [isMounted, setIsMounted] = useState(false);
 
+  // used to only render the Klaviyo form after the component has mounted to stop hydration errors
   useEffect(() => {
-    // This code will run only on the client side
     setIsMounted(true);
   }, []);
 
