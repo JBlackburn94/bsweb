@@ -1,44 +1,103 @@
-"use client";
-import { InstagramEmbed } from "react-social-media-embed";
-import Script from "next/script";
+import Link from "next/link";
+import Image from "next/image";
+import cowboyMilk from "../../../public/cowboy-milk.webp";
+import gloom from "../../../public/gloom.webp";
+import happiness from "../../../public/happiness.webp";
 
 export default function Merch() {
   return (
-    <section className="grid grid-cols-3 grid-rows-3 w-full h-screen gap-10 p-5 border-2 border-green-400">
-      <div className="col-span-1 row-span-3 flex justify-center items-center border-2 border-white overflow-hidden rounded-2xl">
-        <h2 className="text-4xl font-black uppercase text-primary">Merch</h2>
-      </div>
-      <InstagramEmbed
-        url="https://www.instagram.com/beautyschooluk"
-        className="col-span-1 row-span-2 rounded-2xl"
-      />
-      <blockquote
-        className="tiktok-embed overflow-x-hidden col-span-1 row-span-2"
-        cite="https://www.tiktok.com/@beautyschool.band"
-        data-unique-id="beautyschool.band"
-        data-embed-type="creator"
-      >
-        {" "}
-        <section>
-          {" "}
-          <a
+    <section className="grid grid-cols-2 grid-rows-3 w-full h-screen gap-10 p-5 text-white">
+      <div className="flex flex-col justify-center items-center col-span-1 row-span-3 rounded-2xl relative z-10">
+        <div className="absolute flex flex-col justify-center items-center gap-5 z-20">
+          <h3 className="text-4xl font-black text-primary uppercase">
+            Official Merch Store
+          </h3>
+          <Link
+            href={"https://beautyschooluk.bandcamp.com/merch"}
             target="_blank"
-            href="https://www.tiktok.com/@beautyschool.band?refer=creator_embed"
-            className="text-accent font-thin"
           >
-            @beautyschool.band
-          </a>{" "}
-        </section>{" "}
-      </blockquote>{" "}
-      <Script async src="https://www.tiktok.com/embed.js"></Script>
-      <div className="col-span-2 row-span-1 p-1 flex flex-col justify-start items-start overflow-hidden rounded-2xl">
-        <h3 className="text-3xl font-bold text-primary uppercase">
-          Merch Info
-        </h3>
-        <p className="text-white">
-          <span className="font-semibold">Please Note</span> - All merch orders
-          are shipped once a week. If placed whilst we are on tour, items will
-          be dispatched upon our return.
+            <button className="btn btn-accent text-xl">Click Here</button>
+          </Link>
+        </div>
+        <video
+          autoPlay
+          playsInline
+          loop
+          muted
+          className="object-cover h-full w-full rounded-2xl"
+        >
+          <source src="/merch-vid.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className="col-span-1 row-span-2 p-1 rounded-2xl flex flex-col gap-5">
+        <h2 className="text-3xl font-bold text-primary uppercase">
+          Physical/Digital Music
+        </h2>
+        <div className="flex flex-col justify-center items-start gap-5 h-full">
+          <div className="h-1/3 w-full flex justify-start items-center gap-10 overflow-hidden">
+            <Image src={cowboyMilk} alt="Cowboy Milk Artwork" height={120} />
+            <span className="flex flex-col">
+              <h4 className="font-semibold text-lg">Reaper ft Dan Campbell</h4>
+              <p className="text-sm">Single</p>
+              <p className="text-sm font-thin">Slam Dunk Records</p>
+              <p className="text-sm font-thin">2024</p>
+              <Link
+                href={
+                  "https://beautyschooluk.bandcamp.com/track/reaper-feat-dan-campbell"
+                }
+                target="_blank"
+                className="link-accent text-sm"
+              >
+                Purchase
+              </Link>
+            </span>
+          </div>
+          <div className="h-1/3 w-full flex justify-start items-center gap-10 overflow-hidden">
+            <Image src={gloom} alt="Gloom Artwork" height={120} />
+            <span className="flex flex-col">
+              <h4 className="font-semibold text-lg">Gloom</h4>
+              <p className="text-sm">Single</p>
+              <p className="text-sm font-thin">Slam Dunk Records</p>
+              <p className="text-sm font-thin">2024</p>
+              <Link
+                href={"https://beautyschooluk.bandcamp.com/track/gloom"}
+                target="_blank"
+                className="link-accent text-sm"
+              >
+                Purchase
+              </Link>
+            </span>
+          </div>
+          <div className="h-1/3 w-full flex justify-start items-center gap-10 overflow-hidden">
+            <Image src={happiness} alt="Happiness Artwork" height={120} />
+            <span className="flex flex-col">
+              <h4 className="font-semibold text-lg">Happiness</h4>
+              <p className="text-sm">Album</p>
+              <p className="text-sm font-thin">Slam Dunk Records</p>
+              <p className="text-sm font-thin">2022</p>
+              <Link
+                href={"https://beautyschooluk.bandcamp.com/album/happiness"}
+                target="_blank"
+                className="link-accent text-sm"
+              >
+                Purchase
+              </Link>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-1 row-span-1 rounded-2xl p-1 flex flex-col items-start justify-end">
+        <div className="indicator">
+          <span className="indicator-item badge badge-error">Important!</span>
+          <div className="grid h-32 w-32 place-items-center">
+            <h3 className="text-3xl uppercase font-bold text-primary">
+              Merch Information
+            </h3>
+          </div>
+        </div>
+        <p>
+          Orders will be sent out once a week. If we are on tour, items will be
+          dispatched upon our return.
         </p>
       </div>
     </section>
