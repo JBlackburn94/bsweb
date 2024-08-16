@@ -1,14 +1,4 @@
-"use client";
-import { useEffect, useState } from "react";
-
 export default function Hero() {
-  // const [isMounted, setIsMounted] = useState(false);
-
-  // useEffect(() => {
-  //   // This code will run only on the client side
-  //   setIsMounted(true);
-  // }, []);
-
   return (
     <section className="grid grid-cols-2 grid-rows-3 w-full h-screen gap-10 p-5">
       <div className="row-span-3 col-span-1 relative flex justify-center items-center rounded-2xl skeleton overflow-hidden">

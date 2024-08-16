@@ -1,11 +1,20 @@
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import tourGif from "../../../public/bs-tour-gif.gif";
 import Script from "next/script";
 
 export default function Tickets() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // This code will run only on the client side
+    setIsMounted(true);
+  }, []);
+
   return (
-    <section className="grid grid-cols-2 grid-rows-1 w-full h-screen gap-10 p-10">
-      <div className="w-full h-full flex  object-contain overflow-y-scroll rounded-2xl skeleton">
+    <section className="grid grid-cols-2 grid-rows-3 w-full h-screen gap-10 p-5">
+      <div className="row-span-3 col-span-1 w-full h-full flex  object-contain overflow-y-scroll rounded-2xl skeleton">
         <a
           href="https://www.songkick.com/artists/1084890"
           className="songkick-widget"
@@ -28,13 +37,16 @@ export default function Tickets() {
         ></a>
         <Script src="//widget-app.songkick.com/injector/1084890"></Script>
       </div>
-      <div className="w-full h-full flex justify-center items-center rounded-2xl skeleton">
+      <div className="row-span-2 col-span-1 w-full h-full flex justify-center items-center rounded-2xl skeleton">
         <Image
           src={tourGif}
           alt="An animated gif of the band and crew"
           unoptimized={true}
           className="h-full w-full object-cover rounded-2xl"
         />
+      </div>
+      <div className="row-span-1 col-span-1 w-full h-full flex justify-center items-center overflow-hidden bg-black rounded-2xl">
+        {isMounted && <div className="klaviyo-form-SvFrc8"></div>}
       </div>
     </section>
   );
