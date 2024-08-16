@@ -37,7 +37,11 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/" className="tooltip tooltip-right" data-tip="Contact">
+            <Link
+              href="#contact"
+              className="tooltip tooltip-right"
+              data-tip="Contact"
+            >
               <MdAlternateEmail className="icon text-2xl text-white hover:text-info" />
             </Link>
           </li>
