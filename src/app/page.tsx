@@ -5,7 +5,7 @@ import Tickets from "./components/Tickets";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-start px-[120px] pt-10 gap-10">
+    <main className="flex flex-col justify-start px-[150px] pt-[50px] gap-20">
       <Hero />
       <Tickets />
       <Merch />

@@ -13,7 +13,7 @@ export default function Tickets() {
   }, []);
 
   return (
-    <section className="grid grid-cols-2 grid-rows-3 w-full h-screen gap-10 p-5">
+    <section className="grid grid-cols-2 grid-rows-3 w-full h-screen gap-10">
       <div className="row-span-3 col-span-1 w-full h-full flex  object-contain overflow-y-scroll rounded-2xl skeleton">
         <a
           href="https://www.songkick.com/artists/1084890"
