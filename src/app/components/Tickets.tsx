@@ -1,20 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import tourGif from "../../../public/bs-tour-gif.gif";
 import Script from "next/script";
 
 export default function Tickets() {
   const [isMounted, setIsMounted] = useState(false);
 
-  // used to only render the Klaviyo form after the component has mounted to stop hydration errors
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
   return (
-    <section className="grid grid-cols-2 grid-rows-3 w-full h-screen gap-10">
-      <div className="row-span-3 col-span-1 w-full h-full flex  object-contain overflow-y-scroll rounded-2xl skeleton">
+    <section className="grid grid-cols-1 lg:grid-cols-2 grid-rows-10 lg:grid-rows-3 w-full h-screen gap-10">
+      <div className="row-span-6 lg:row-span-3 col-span-1 w-full h-full flex  object-contain overflow-y-scroll rounded-2xl skeleton">
         <a
           href="https://www.songkick.com/artists/1084890"
           className="songkick-widget"
@@ -37,15 +34,28 @@ export default function Tickets() {
         ></a>
         <Script src="//widget-app.songkick.com/injector/1084890"></Script>
       </div>
-      <div className="row-span-2 col-span-1 w-full h-full flex justify-center items-center rounded-2xl skeleton">
-        <Image
-          src={tourGif}
-          alt="An animated gif of the band and crew"
-          unoptimized={true}
-          className="h-full w-full object-cover rounded-2xl"
-        />
+      <div className="hidden lg:block col-span-1 row-span-2 order-2 rounded-2xl overflow-hidden">
+        <iframe
+          className="w-full h-full object-cover"
+          src="https://open.spotify.com/embed/artist/46yPZXaKNR5nkEqMzhifG6?utm_source=generator"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
       </div>
-      <div className="row-span-1 col-span-1 w-full h-full flex justify-center items-center overflow-hidden bg-black rounded-2xl">
+      <div className="block lg:hidden col-span-1 row-span-2 order-2 rounded-2xl overflow-hidden">
+        <iframe
+          src="https://open.spotify.com/embed/artist/46yPZXaKNR5nkEqMzhifG6?utm_source=generator"
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div className="row-span-4 lg:row-span-1 col-span-1 w-full h-full flex justify-center items-center overflow-hidden rounded-2xl">
         {isMounted && <div className="klaviyo-form-SvFrc8"></div>}
       </div>
     </section>

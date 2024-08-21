@@ -6,9 +6,9 @@ import happiness from "../../../public/happiness.webp";
 
 export default function Merch() {
   return (
-    <section className="grid grid-cols-2 grid-rows-3 w-full h-screen gap-10 text-white">
-      <div className="flex flex-col justify-center items-center col-span-1 row-span-3 rounded-2xl relative z-10">
-        <div className="absolute flex flex-col justify-center items-center gap-5 z-20">
+    <section className="grid grid-cols-1 lg:grid-cols-2 grid-rows-13 lg:grid-rows-3 w-full min-h-screen gap-10 text-white">
+      <div className="flex flex-col justify-center order-2 items-center col-span-1 row-span-10 lg:row-span-3 rounded-2xl relative z-10">
+        <div className="absolute flex flex-col justify-center items-center gap-5 overflow-hidden z-20">
           <h3 className="text-4xl font-black text-primary uppercase">
             Official Merch Store
           </h3>
@@ -19,17 +19,19 @@ export default function Merch() {
             <button className="btn btn-accent text-xl">Click Here</button>
           </Link>
         </div>
-        <video
-          autoPlay
-          playsInline
-          loop
-          muted
-          className="object-cover h-full w-full rounded-2xl"
-        >
-          <source src="/merch-vid.mp4" type="video/mp4" />
-        </video>
+        <div className="relative w-full h-full overflow-hidden rounded-2xl">
+          <video
+            autoPlay
+            playsInline
+            loop
+            muted
+            className="absolute top-0 left-0 w-full h-full object-cover scale-125 lg:scale-100"
+          >
+            <source src="/merch-vid.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
-      <div className="col-span-1 row-span-2 p-1 rounded-2xl flex flex-col gap-5">
+      <div className="col-span-1 row-span-3 order-2 p-1 rounded-2xl flex flex-col gap-5">
         <h2 className="text-3xl font-bold text-primary uppercase">
           Physical/Digital Music
         </h2>
@@ -86,7 +88,7 @@ export default function Merch() {
           </div>
         </div>
       </div>
-      <div className="col-span-1 row-span-1 rounded-2xl p-1 flex flex-col items-start justify-end">
+      <div className="col-span-1 row-span-1 order-1 rounded-2xl p-1 flex flex-col items-start justify-end">
         <div className="indicator">
           <span className="indicator-item badge badge-error">Important!</span>
           <div className="grid h-32 w-32 place-items-center">

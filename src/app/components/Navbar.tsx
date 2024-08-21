@@ -2,7 +2,6 @@
 import Link from "next/link";
 import {
   FaHome,
-  FaEnvelope,
   FaSpotify,
   FaInstagram,
   FaTiktok,
@@ -18,8 +17,12 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <header className=" mx-4 mt-10 fixed z-50">
-      <Image src={logo} alt="The Beauty School logo" className="w-20 my-2" />
-      <nav className="flex flex-col gap-20">
+      <Image
+        src={logo}
+        alt="The Beauty School logo"
+        className="w-20 my-2 hidden lg:block"
+      />
+      <nav className="lg:flex flex-col gap-20 hidden">
         <ul className="menu bg-white/50 rounded-box">
           <li>
             <Link href="/" className="tooltip tooltip-right" data-tip="Home">
