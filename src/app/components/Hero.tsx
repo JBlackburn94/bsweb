@@ -15,9 +15,9 @@ export default function Hero() {
         </div>
         <video
           autoPlay
-          muted
+          playsInline
           loop
-          preload="none"
+          muted
           className="absolute top-0 left-0 w-full h-full object-cover scale-125 lg:scale-100 z-10"
         >
           <source src="/hero-vid.mp4" type="video/mp4" />
