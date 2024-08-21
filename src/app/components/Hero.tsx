@@ -2,7 +2,10 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="grid grid-cols-1 grid-rows-1 w-full mt-16 h-screen gap-5 lg:gap-10">
+    <section
+      id="hero"
+      className="grid grid-cols-1 grid-rows-1 w-full mt-16 h-screen gap-5 lg:gap-10"
+    >
       <div className="row-span-1 col-span-1 order-1 relative flex justify-center items-center rounded-2xl skeleton overflow-hidden">
         <div className="absolute text-white z-20 object-cover flex flex-col h-full justify-center items-center gap-10">
           <span>

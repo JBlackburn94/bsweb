@@ -6,7 +6,10 @@ import happiness from "../../../public/happiness.webp";
 
 export default function Merch() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 grid-rows-13 lg:grid-rows-3 w-full min-h-screen gap-10 text-white">
+    <section
+      id="merch"
+      className="grid grid-cols-1 lg:grid-cols-2 grid-rows-13 lg:grid-rows-3 w-full min-h-screen gap-10 text-white"
+    >
       <div className="flex flex-col justify-center order-2 items-center col-span-1 row-span-10 lg:row-span-3 rounded-2xl relative z-10">
         <div className="absolute flex flex-col justify-center items-center gap-5 overflow-hidden z-20">
           <h3 className="text-4xl font-black text-primary uppercase text-center">
